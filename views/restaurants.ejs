@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Restaurant Database </title>
+	<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0Br-OyOZwc-cmcLKl2DezHBK0QMdkuD8&callback=initMap"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		// initialize map, user, and marker list
+		var map;
+		var user;
+		var markerList = [];
+		
+		// load google map
+		var loadMap = function() {
+			var myOptions = {
+				center: new google.maps.LatLng(39.952335, -75.163789),
+				zoom: 10, mapTypeId: google.maps.MapTypeId.ROADMAP
+			};
+			
+			map = new google.maps.Map(document.getElementById("map"), myOptions);
+			
+			google.maps.event.addListener(map, 'click', function(event){
+					document.getElementById('lat').value = event.latLng.lat();
+					document.getElementById('long').value = event.latLng.lng();
+			});
+		};
+		
+		// fetch username to store
+		var getUser = function() {
+			$.get("/getUser", function(data, status){
+				user = data;
+			});
+		}
+		
+		// delete restaurant of marker in database
+		var deleteMarker = function(name, creator) {
+			$.post('/deleterestaurant',
+					{
+						name: name,
+						creator: creator
+					},
+				function(data, status){
+					if(data === "Error") {
+						alert("Marker created by other user");
+					} else {
+						console.log("Deleted");
+					}
+				});
+		}
+		
+		// fetch all new markers to add to markerList
+		var getMarkers = function() {
+				$.getJSON('/restData', function(element){
+				if(element === "Error") {
+					alert("Error");
+				}
+				
+				// Check if old elements are still present, set marker to null otherwise
+				var namesOfNewEls = [];
+				for(var i = 0; i < element.length; i++){
+					var currEntry = element[i];
+					namesOfNewEls.push(currEntry.name);
+				}
+				for(var i = 0; i < markerList.length; i++) {
+					if(!namesOfNewEls.includes(markerList[i].name)) {
+						markerList[i].setMap(null);
+						markerList.slice(i,1);
+					}
+				}
+				var oldElName = []; 
+				for(var i = 0; i < markerList.length; i++){
+					var currEntry = markerList[i];
+					oldElName.push(currEntry.name);
+				}
+				
+				// Iterate through new markers to add to markerList
+				for(var i = 0; i < element.length; i++){
+					var currEntry = element[i];
+					
+					if(oldElName.includes(currEntry.name)) {
+						continue;
+					}
+					
+					// Set marker to appropriate color
+					var chec;
+					if(user == currEntry.creator) {
+						chec = "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png"
+					} else {
+						chec = "http://maps.google.com/mapfiles/ms/icons/red-dot.png"
+					}
+					
+					// Create marker
+					var myPos = new google.maps.LatLng(currEntry.latitude, currEntry.longitude);
+					const marker = new google.maps.Marker({
+						position: myPos,
+						draggable: false,
+						icon: chec
+					});
+					
+					// Set marker info window
+					marker['infowindow'] = new google.maps.InfoWindow({
+						content: "<b>" + currEntry.name + "</b>  <br>" + currEntry.description +  "<br> <i> Added by " +currEntry.creator + "</i>"
+					});
+					google.maps.event.addListener(marker, 'click', function(){
+						this['infowindow'].open(map,this);
+					});
+					
+					marker['name'] = element[i].name;
+					marker['creator'] = element[i].creator;
+					
+					// Add listerner to marker for deletion
+					marker.addListener('rightclick', function(){
+						if("http://maps.google.com/mapfiles/ms/icons/yellow-dot.png" === marker.icon) {
+							marker.setMap(null);
+							deleteMarker(marker['name'], marker['creator']);
+						} else {
+							alert("Marker created by other user");
+						}
+					});
+					markerList.push(marker);
+					
+					
+					marker.setMap(map);
+				}
+				
+				
+				});
+		}
+		
+		// Adds restaurant to database
+		var addRestaurant = function() {
+			$("#formAdd").submit(function(){
+				event.preventDefault();
+				$.post('/addrestaurant', 
+					{
+						name: $('#name').val(),
+						latitude: $('#lat').val(),
+						longitude: $('#long').val(),
+						description: $('#desc').val(),
+					},
+				function(data, status){
+					if(data === "Error") {
+						alert("Incorrect Form Input");
+					} else {
+						$("#formAdd").each(function() {
+							this.reset();
+						});
+						getMarkers();
+					}
+				});
+			});
+		};
+		
+		// Refresh page every 5 seconds
+		var refreshTime = function() {
+			getMarkers();
+			setTimeout(refreshTime, 5000);
+		}
+		
+		$(document).ready(function() {
+			getUser();
+			loadMap();
+			getMarkers();
+			addRestaurant();
+			setTimeout(refreshTime, 5000);
+		});
+		
+		
+	</script>
+	<style>
+		#footer {
+			position: fixed;
+			text-align: center;
+			padding: 10px 10px 0px 0px;
+			bottom: 0;
+			width: 100%;
+			height: 50px;
+			color: white;
+			font-size: 15px;
+			background: #4169E1;
+		}
+		#form {
+			height: 90%;
+			width: 100%;
+			text-align: center;
+			background: rgb(145,227,216);
+			background: linear-gradient(90deg, rgba(145,227,216,1) 20%, rgba(241,230,255,1) 49%, rgba(92,225,252,1) 100%);
+		}
+		.tableStyle {
+			margin: 30px 0;
+			margin-left: auto;
+			margin-right: auto;
+			font-family:verdana;
+			font-size: 0.9em;
+			min-width: 350px;
+			box-shadow: 0 0 15px rgba(0,0,0,0.15);
+			border-collapse:collapse;
+			padding: 15px 20px;
+			text-align: center;
+		}
+		.tableStyle thead tr{
+			backgroud-color: #008875
+			text-align: center;
+			color: black;
+		}
+		.tableStyle th, .tableStyle td {
+			padding: 15px 50px;
+		}
+	</style>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/4.0.3/css/font-awesome.min.css">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container" id="form">
+  <br>
+  <br>
+  <h1 style="font-family:verdana;"> Welcome <%= fullname %> </h1>
+  
+  <h3 style="font-family:verdana;color:purple;"> Restaurant Map </h3>
+  <div style="text-align:center;">
+  	<div id="map" style="width:50%;height:500px;margin:auto;border:5px solid; padding:10px;"></div>
+  </div>
+  <h3 style="font-family:verdana;">Add a New Restaurant!</h3>
+  
+  <form method="post" id="formAdd">
+  	<div class="form-group">
+  		<label style="font-family:verdana;">Latitude</label>
+    	<input type="text" name="latitude" id="lat">
+    </div>
+    <div class="form-group">
+    	<label style="font-family:verdana;">Longitude</label>
+    	<input type="text" name="longitude" id="long">
+    </div>
+    <div class="form-group">
+    	<label style="font-family:verdana;">Restaurant Name</label>
+    	<input type="text" name="name" id="name">
+    </div>
+    <div class="form-group">
+    	<label style="font-family:verdana;">Description</label>
+    	<input type="text" name="description" id="desc">
+    </div>
+    <input type="submit" value="Add">
+  </form>
+  <br>
+  
+  <%if (message != null) { %>
+  <p style="color:red; font-family:verdana;"><%= message %><p>
+  <% } %>
+  
+  <p style="margin-bottom:3cm; font-family:verdana;"> <a href="/logout"> Logout Here </a> </p>
+  </div>
+
+  
+  <div id="footer">
+	<p style="font-family:verdana;"> Nicholas Kuo, nickkuo </p>
+  </div>
+</body>
+
+</html>

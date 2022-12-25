@@ -1,0 +1,307 @@
+
+
+.page2-editacc {
+    display:contents;
+    text-align: center;
+}
+
+.accountDiv-editacc {
+  flex: 3;
+  color: #2379eb;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.userCard-editacc {
+    color: #6d7075;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+}
+
+.accountDiv2-editacc {
+    color: #6d7075;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+  }
+
+.accountDiv3-editacc {
+    color: #6d7075;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+}
+
+.Accountcontainer-editacc {
+  background-color: #e6f3ff;
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+ 
+.account2-editacc {
+    display: flex;
+    width: 300px;
+    height: 80%;
+}
+.account7-editacc {
+    display: flex;
+    width: 100px;
+    height: 80%;
+}
+
+.account-banner {
+    margin-top: 30px;
+    margin-left: 30px;
+    height: 50px;
+    flex: 1;
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.style-card-container {
+    margin-left: 35px;
+}
+
+.user-edit-container {
+    flex: 2;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.user-edit-wrapper {
+    width: 400px;
+}
+
+.titleAcc-editacc {
+    align-items: center;
+    letter-spacing: 0;
+    width: 750px;
+    top: 20px;
+    font-size: 55px;
+}
+ 
+.user-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex: 4;
+}
+
+.usernameAcc-editacc {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 10px;
+    width: 220px;
+    height: 80px;
+    position: absolute;
+    left: 90px;
+    top: 130px;
+}
+
+.accForm-editacc {
+    justify-content: space-between;
+    height: 100px;
+    flex-direction: column;
+    padding: 25px;
+    border-radius: 17px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+}
+
+.homeButton-editacc {
+    height: 50px;
+    border-radius: 5px;
+    cursor: pointer;
+    border-radius: 20px;
+    align-self: center;
+    background-color: #1a6dda;
+    color: white;
+    font-size: 18px;
+    font-weight: 480;
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    
+}
+.homeButton-editacc:hover {
+    background-color:rgb(123, 96, 154);
+}
+
+.inputAcc-editacc {
+    border-radius: 5px;
+    height: 45px;
+    border: 1px solid rgb(79, 99, 232);
+    font-size: 15px;
+    padding-left: 18px;
+}
+ 
+.labelAcc {
+    font-size: 25px;
+    font-weight: 600;
+    float: left;
+    margin-right: 1em;
+    text-align: left;
+}
+ 
+.changebutton {
+    height: 45px;
+    border-radius: 9px;
+    background-color: #146de2;
+    font-size: 22px;
+    cursor: pointer;
+    color: white;
+    font-weight: 475;
+}
+
+.changebutton:hover {
+    background: linear-gradient(90deg, rgba(145,227,216,1) 20%, rgb(210, 10, 224) 49%, rgba(92,225,252,1) 100%);
+}
+.create2 {
+    display: flex;
+    padding: 30px 10px;
+    width: 520px;
+    height: 80px;
+    left: 90px;
+    top: 300px;
+}
+
+
+
+.page {
+    display:contents;
+    text-align: center;
+}
+
+.accountDiv {
+  flex: 2;
+  color: #2379eb;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.userCard {
+    color: #6d7075;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+}
+
+.accountDiv2 {
+    color: #6d7075;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+  }
+
+.accountDiv3 {
+    color: #6d7075;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+}
+
+.Accountcontainer {
+  background-color: #e6f3ff;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+}
+ 
+.login2 {
+    display: flex;
+    width: 75%;
+    height: 75%;
+}
+ 
+.title {
+    align-items: center;
+    letter-spacing: 0;
+    width: 750px;
+    top: 20px;
+    font-size: 55px;
+}
+ 
+.username {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 10px;
+    width: 220px;
+    height: 80px;
+    position: absolute;
+    left: 90px;
+    top: 130px;
+}
+
+.logForm2 {
+    justify-content: space-between;
+    height: 100px;
+    flex-direction: column;
+    padding: 25px;
+    border-radius: 17px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+}
+
+.homeButton {
+    height: 50px;
+    border-radius: 5px;
+    cursor: pointer;
+    border-radius: 20px;
+    align-self: center;
+    background-color: #1a6dda;
+    color: white;
+    font-size: 18px;
+    font-weight: 480;
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    
+}
+.homeButton:hover {
+    background-color:rgb(123, 96, 154);
+}
+
+.input1 {
+    border-radius: 5px;
+    height: 45px;
+    border: 1px solid rgb(79, 99, 232);
+    font-size: 15px;
+    padding-left: 18px;
+}
+ 
+.label {
+    font-size: 25px;
+    font-weight: 600;
+    float: left;
+    margin-right: 1em;
+    text-align: left;
+}
+ 
+.changebutton {
+    height: 45px;
+    border-radius: 9px;
+    background-color: #146de2;
+    font-size: 22px;
+    cursor: pointer;
+    color: white;
+    font-weight: 475;
+}
+
+.changebutton:hover {
+    background: linear-gradient(90deg, rgba(145,227,216,1) 20%, rgb(210, 10, 224) 49%, rgba(92,225,252,1) 100%);
+}
+.create {
+    display: flex;
+    padding: 30px 10px;
+    width: 520px;
+    height: 80px;
+    left: 90px;
+    top: 300px;
+}

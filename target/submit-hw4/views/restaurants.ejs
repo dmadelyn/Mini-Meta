@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Restaurant Database </title>
+	<style>
+		#footer {
+			position: fixed;
+			text-align: center;
+			padding: 10px 10px 0px 0px;
+			bottom: 0;
+			width: 100%;
+			height: 50px;
+			color: white;
+			font-size: 15px;
+			background: #4169E1;
+		}
+		#form {
+			height: 90%;
+			width: 100%;
+			text-align: center;
+			background: rgb(145,227,216);
+			background: linear-gradient(90deg, rgba(145,227,216,1) 20%, rgba(241,230,255,1) 49%, rgba(92,225,252,1) 100%);
+		}
+		.tableStyle {
+			margin: 30px 0;
+			margin-left: auto;
+			margin-right: auto;
+			font-family:verdana;
+			font-size: 0.9em;
+			min-width: 350px;
+			box-shadow: 0 0 15px rgba(0,0,0,0.15);
+			border-collapse:collapse;
+			padding: 15px 20px;
+			text-align: center;
+		}
+		.tableStyle thead tr{
+			backgroud-color: #008875
+			text-align: center;
+			color: black;
+		}
+		.tableStyle th, .tableStyle td {
+			padding: 15px 50px;
+		}
+	</style>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/4.0.3/css/font-awesome.min.css">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container" id="form">
+  <br>
+  <br>
+  <h1 style="font-family:verdana;"> Welcome <%= fullname %> </h1>
+  
+  <h2 style="font-family:verdana;"> Restaurants </h2>
+  
+  <table class="tableStyle">
+  	<thead>
+  	<tr>
+  		<th>Latitude</th>
+  		<th>Longitude</th>
+  		<th>Restaurant</th>
+  		<th>Description</th>
+  		<th>Submission User</th>
+  	</tr>
+  	</thead>
+  	<%if (table != null) { %>
+ 
+  	<% for (var i = 0; i < table.length; i++) { %>
+  		<tr>
+  			<td><%= table[i].latitude %> </td>
+  			<td><%= table[i].longitude %> </td>
+  			<td><%= table[i].name %> </td>
+  			<td><%= table[i].description %> </td>
+  			<td><%= table[i].creator %> </td>
+  		</tr>
+  	<% }; %>
+  	
+  <% } %>
+  </table>
+  
+  <h3 style="font-family:verdana;">Add a New Restaurant!</h3>
+  
+  <form action="/addrestaurant" method="post">
+  	<div class="form-group">
+  		<label style="font-family:verdana;">Latitude</label>
+    	<input type="text" name="latitude">
+    </div>
+    <div class="form-group">
+    	<label style="font-family:verdana;">Longitude</label>
+    	<input type="text" name="longitude">
+    </div>
+    <div class="form-group">
+    	<label style="font-family:verdana;">Restaurant Name</label>
+    	<input type="text" name="name">
+    </div>
+    <div class="form-group">
+    	<label style="font-family:verdana;">Description</label>
+    	<input type="text" name="description">
+    </div>
+    <input type="submit" value="Add">
+  </form>
+  <br>
+  
+  <%if (message != null) { %>
+  <p style="color:red; font-family:verdana;"><%= message %><p>
+  <% } %>
+  
+  <p style="margin-bottom:3cm; font-family:verdana;"> <a href="/logout"> Logout Here </a> </p>
+  </div>
+
+  
+  <div id="footer">
+	<p style="font-family:verdana;"> Nicholas Kuo, nickkuo </p>
+  </div>
+</body>
+
+</html>

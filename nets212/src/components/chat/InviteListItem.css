@@ -1,0 +1,36 @@
+.chat-invite-container {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    border-radius: 8px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    margin-left: -5px;
+    margin-right: -5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 20px;
+    background-color: #fafafa;
+}
+
+.chat-invite-buttons-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.chat-invite-info-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.chat-accept-button {
+    margin-right: 10px;
+}
+
+.chat-invite-buttons-container button {
+    height: 35px;
+    margin-top: 13px;
+    border-radius: 10px !important;
+    font-size: 14px !important;
+}

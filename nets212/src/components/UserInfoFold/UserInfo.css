@@ -1,0 +1,21 @@
+.page {
+    display:contents;
+    text-align: center;
+}
+
+.styleCard {
+   font-family: sans-serif;
+   padding-top: 5%;
+   padding-left: 5%;
+   margin-bottom: 15px;
+   background-color : transparent;
+   border: none;
+   text-align: left;
+  }
+
+.styleCard:hover {
+    margin-bottom:15px;
+    background-color: rgb(170, 206, 231);
+    box-shadow :0px 0px 7px 2px #03155b;
+    cursor:pointer;
+}

@@ -1,0 +1,105 @@
+.chat-header-container {
+    border-bottom: 1px solid silver;
+    min-height: 70px;
+    max-height: 70px;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-shadow: 0 1px 1px 0px lightgray;
+}
+
+.chat-messages-input-container {
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.chat-messages {
+    overflow: scroll;
+    flex: 2;
+}
+
+.chat-input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1.5vh;
+}
+
+.chat-input {
+    flex: 2;
+    font-size: 20px;
+    border-radius: 15px;
+    padding: 10px;
+    border: 1px solid white;
+    background-color: rgba(0, 0, 0, 0.04);
+    margin-right: 15px;
+}
+
+.chat-input:focus {
+    outline: none;
+}
+
+.chat-input-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.chat-send-button:active {
+    -webkit-filter: brightness(70%);
+}
+
+.chat-header-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.chat-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 500;
+    margin-left: 10px;
+}
+
+.addfriend-leave-container {
+    display: flex;
+    flex-direction: row;
+    padding-top: 14px;
+    padding-bottom: 14px;
+}
+
+.friend-input {
+    font-size: 20px;
+    border-radius: 15px;
+    padding: 10px;
+    border: 1px solid white;
+    background-color: rgba(0, 0, 0, 0.04);
+    margin-right: 20px;
+    margin-top: -2px;
+    margin-bottom: -2px;
+}
+
+.friend-input-button {
+    font-size: 18px;
+    margin-right: 20px;
+    width: 80px;
+    border-radius: 15px !important;
+}
+
+.leave-button {
+    font-size: 18px;
+    width: 80px;
+    border-radius: 15px !important;
+}
+
+.chat-messages {
+    padding: 20px;
+}

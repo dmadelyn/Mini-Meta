@@ -1,0 +1,165 @@
+.input9 {
+  border-radius: 5px;
+  height: 45px;
+  width: 75%;
+  border: 1px solid rgb(79, 99, 232);
+  font-size: 15px;
+  padding-left: 18px;
+}
+
+.overcontainer  {
+  -webkit-box-shadow: 0px 0px 15px -8px rgba(0, 0, 0, 0.628);
+  width: 80%;
+  box-shadow: 0px 0px 15px -8px rgba(0, 0, 0, 0.616);
+  margin: 10px 0;
+  border-radius: 15px;
+  margin:auto;
+}
+
+.proPicLeft1 {
+  align-items: center;
+  display: flex;
+}
+
+.shareBut {
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(13, 190, 1);
+    font-weight: 450;
+    cursor: pointer;
+    margin-left: 20px;
+    color: white;
+}
+
+.smaller {
+  height: auto; 
+  width: auto; 
+  max-width: 30px; 
+  max-height: 30px;
+}
+
+.postBody {
+  margin-top: 10px;
+  justify-content: space-between;
+
+}
+
+.postContent {
+  justify-content: space-between;
+  margin: 15px 2; 
+  padding: 5px;
+}
+
+.usernameDisplay {
+    margin: 0 12px;
+    font-weight: 450;
+    font-size: 15px;
+}
+.usernameDisplay2  {
+  margin: 0 12px;
+  font-weight: 400;
+  font-size: 13px;
+  font-style: italic;
+}
+
+.shareInput {
+  border: none;
+  width: 100%;
+  color:#1268d9;
+  font-weight: 400;
+  font-size: 15px;
+  background-color: #eefaff;
+}
+
+.shareInput:focus {
+  outline: none;
+}
+
+.dateDisplay {
+ font-size: 10px;
+}
+
+.proimg1 {
+    height: auto; 
+    width: auto; 
+    max-width: 50px; 
+    max-height: 50px;
+    object-fit: cover;
+}
+
+.topDivShare {
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+}
+
+.bottomDiv {
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.wrap {
+    padding: 5px;
+}
+
+.commentSection{
+  max-height: 13vh;
+  max-width: 50%;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #fdfdfd;
+  color: #1d2129;
+  border:1px solid black;
+  overflow-y:scroll;
+}
+.blue{
+  color: #1268d9;
+}
+.gray {
+  color:#7a7a7a;
+  font-size: 11px;
+}
+.black {
+  color: #1d2129;
+}
+
+.submit3 {
+  height: 20px;
+    border-radius: 9px;
+    background-color: #d8e9ff;
+    font-size: 12px;
+    cursor: pointer;
+    color: rgb(10, 1, 1);
+    font-weight: 475;
+}
+
+.in {
+  margin-top: 0;
+  padding: 4px 12px 8px 12px;
+  background-color: #f6f7f9;
+}
+
+.form3 {
+  width: 70%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+.comment{
+  font-size: 14px;
+  margin-top: 2px;
+  line-height: 18px;
+  color: black;
+  padding: 0 12px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #365899;
+  font-size: 12px;
+  margin: 0;
+  
+}

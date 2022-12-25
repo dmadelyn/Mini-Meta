@@ -1,0 +1,44 @@
+.chat-friend-container {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    border-top: 1px solid silver;
+}
+
+.chat-friend-label-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.chat-friend-label-status {
+    font-size: 20px;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.chat-friend-status {
+    margin-left: 15px;
+    white-space: nowrap;
+    padding-top: 1px;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.chat-invite-button {
+    height: 37px;
+    margin-top: 3px;
+    border-radius: 10px !important;
+    font-size: 15px !important;
+}
+
+.invite-button-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}

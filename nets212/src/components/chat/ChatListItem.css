@@ -1,0 +1,41 @@
+.chat-thumbnail-container {
+    cursor : pointer;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+
+.chat-thumbnail-container {
+    height: 80px;
+    background-color: white;
+    transition: 0.3s;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 13px;
+    padding-right: 13px;
+
+}
+
+.chat-thumbnail-name {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.chat-thumbnail-message {
+    font-size: 18px;
+}
+.chat-thumbnail-container:hover {
+    background-color: rgba(0, 0, 0, 0.04) !important; 
+    transition: 0.1s !important;
+}
+
+.chat-send-button {
+    margin-top: 1px;
+    width: 50px;
+    height: 50px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+

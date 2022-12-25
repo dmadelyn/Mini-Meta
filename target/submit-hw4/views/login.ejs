@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Restaurant Database </title>
+	<style>
+		#footer {
+			position: fixed;
+			text-align: center;
+			padding: 10px 10px 0px 0px;
+			bottom: 0;
+			width: 100%;
+			height: 50px;
+			color: white;
+			font-size: 15px;
+			background: #4169E1;
+		}
+		#form {
+			height: 95vh;
+			width: 100%;
+			text-align: center;
+			background: rgb(145,227,216);
+			background: linear-gradient(90deg, rgba(145,227,216,1) 20%, rgba(241,230,255,1) 49%, rgba(92,225,252,1) 100%);
+		}
+	</style>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/4.0.3/css/font-awesome.min.css">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+	<!-- This is a simple example template with a form that has a single input field. 
+		   You'll need something similar for the login page -->
+  <div class="container" id="form">
+  <br>
+  <br>
+  <h1 style="font-family:verdana;">Login</h1>
+  <form action="/checklogin" method="post">
+  	<div class="form-group">
+  		<label style="font-family:verdana;">Username</label>
+    	<input type="text" name="username">
+    </div>
+    <div class="form-group">
+    	<label style="font-family:verdana;">Password</label>
+    	<input type="text" name="password">
+    </div>
+    <input type="submit" value="Login">
+  </form>
+  <br>
+  <p style="margin-bottom:3cm; font-family:verdana;"> Don't have an account? <a href="/signup"> Sign Up Here </a> </p>
+  
+  <%if (message != null) { %>
+  <p style="color:red; font-family:verdana;"><%= message %><p>
+  <% } %>
+  
+  </div>
+  
+  <div id="footer">
+	<p style="font-family:verdana;"> Nicholas Kuo, nickkuo </p>
+  </div>
+</body>
+
+</html>

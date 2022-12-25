@@ -1,0 +1,74 @@
+.cardPage {
+    display:contents;
+    text-align: center;
+    width: 40vw;
+    height: 50vh;
+    align-items: center;
+}
+.rowClassName1 {
+    background-color: cadetblue;
+    border-radius: 10px;
+    border-color: chartreuse;
+    border-width: 3px;
+    border-style: solid;
+  }
+
+.first-name-head {
+    color: white;
+    font-weight: bold;
+    text-underline-position: auto;
+}
+
+.friends-title {
+    color: black;
+    font-weight: bold;
+    text-underline-position: auto;
+}
+
+.friendTableHead {
+    color: black;
+    text-align: center;
+    font-size: 15px;
+    border-bottom: solid 10px black;
+    margin-bottom:10px;
+}
+
+.styleFriendCard{
+   font-family: sans-serif;
+   color: black;
+   margin:auto;
+   margin-bottom: 15px;
+   background-color : transparent;
+   border: none;
+   text-align: left;
+    width: 20vw;
+    height: auto;
+    align-items:center;
+  }
+.friendTable{
+    overflow-y:scroll;
+        
+}
+tr:nth-child(1) { 
+    border-top: 1px solid black; 
+    border-bottom: 1px solid black;
+}
+.friendRow{
+    font-weight: 200;
+    text-align: center;
+    width: 60vw;
+    align-items:center;
+    color: black;
+    border-bottom: 1px solid #000;
+}
+
+.friendRow:hover{
+    background-color: white;
+}
+
+.styleFriendCard:hover {
+    margin-bottom:15px;
+    background: linear-gradient(90deg, rgba(145,227,216,1) 20%, rgb(210, 10, 224) 49%, rgba(92,225,252,1) 100%);
+    box-shadow :0px 0px 7px 2px #03155b;
+    cursor:pointer;
+}

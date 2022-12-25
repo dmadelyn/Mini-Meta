@@ -1,0 +1,123 @@
+.page {
+    display:contents !important;
+    text-align: center !important;
+}
+
+.container2{
+ width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: #e1ebfb;
+  display: flex;
+}
+
+.mainDiv {
+  flex: 2 !important;
+  color: #2379eb !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+}
+
+.mainDiv2 {
+    color: #6d7075 !important;
+    flex-direction: column !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+.container {
+  background-color: #e6f3ff !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  align-items: center !important;
+}
+ 
+.login2 {
+    display: flex;
+    width: 75%;
+    height: 75%;
+}
+ 
+.title {
+    align-items: center;
+    letter-spacing: 0;
+    width: 750px;
+    top: 20px;
+    font-size: 55px;
+}
+ 
+.username {
+    display: flex !important; 
+    flex-direction: column !important;
+    padding: 30px 10px !important;
+    width: 220px !important;
+    height: 80px !important;
+    position: absolute !important;
+    left: 90px !important;
+    top: 130px !important;
+}
+
+.logForm {
+    justify-content: space-between !important;
+    height: 250px;
+    flex-direction: column;
+    padding: 25px;
+    border-radius: 17px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+}
+
+.loginBut2 {
+    height: 50px;
+    border-radius: 5px;
+    cursor: pointer;
+    border-radius: 20px;
+    align-self: center;
+    background-color: #1a6dda;
+    color: white;
+    font-size: 18px;
+    font-weight: 480;
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    
+}
+
+.input1 {
+    border-radius: 5px;
+    height: 45px;
+    border: 1px solid rgb(79, 99, 232);
+    font-size: 15px;
+    padding-left: 18px;
+}
+ 
+.label {
+    font-size: 25px;
+    font-weight: 600;
+    float: left;
+    margin-right: 1em;
+    text-align: left;
+}
+ 
+.loginbutton {
+    height: 45px;
+    border-radius: 9px;
+    background-color: #146de2;
+    font-size: 22px;
+    cursor: pointer;
+    color: white;
+    font-weight: 475;
+}
+ 
+.create {
+    display: flex;
+    padding: 30px 10px;
+    width: 520px;
+    height: 80px;
+    position: absolute;
+    left: 90px;
+    top: 300px;
+}
+

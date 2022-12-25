@@ -1,0 +1,24 @@
+.flexNeeded {
+    flex: 3;
+    align-items: center;
+    margin-left: 2000px;
+    background-color: #eefaff;
+}
+.color1 {
+  background-color: #eefaff;
+}
+.padNeeded {
+    padding:10px;
+    margin-left: 20px;
+    float:right;
+}
+.overcontainer2  {
+    width: 80%;
+    margin: 10px 0;
+    border-radius: 15px;
+    margin:auto;
+    color:#23d057;
+  }
+  .gray2 {
+    color:#23d057;
+  }
